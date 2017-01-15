@@ -1,0 +1,69 @@
+<DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="../css/base.css" type="text/css">
+	<title>ML秘密基地</title>
+	<meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+</head>
+
+<body>
+	<div class="nav">
+	  <ul>
+	    <li><b><a href="/">Makereal Labs</a></b></li>
+	    <li><a href="/islabopen">有人在家嗎</a></li>
+	    <li><a href="/base" class="active-tab">看看社窩</a></li>
+	  </ul>
+	</div>
+	<div id="result-container">
+		溫度: <span id="temp">
+		</span>°C
+		<br>
+		濕度: 
+		<span id="humid">
+		</span>%
+		<div id="timeTitle">最後更新時間：</div>
+		<div id="lastUpdatedTime">
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		type: "GET",
+		url: "temperature.txt",
+		data: {}
+	}).done(function( o ) {
+		$("#temp").html(o);	
+	});
+	$.ajax({
+		type: "GET",
+		url: "humidity.txt",
+		data: {}
+	}).done(function( o ) {
+		$("#humid").html(o);	
+	});
+	$.ajax({
+		type: "GET",
+		url: "lastUpdatedTime.txt",
+		data: {}
+	}).done(function( o ) {
+		$("#lastUpdatedTime").html(o);	
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73788598-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+

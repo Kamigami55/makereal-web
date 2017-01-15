@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+li {
+  display: inline-block;
+  margin: 20px;
+  font-size: 40px;
+}
+
+a:hover {
+  border-bottom: solid 3px #35f4eb;
+}
+.active-tab {
+  border-bottom: solid 3px #324aff;
+}
+
+body {
+  background: black;
+}
+
+
+#result-container {
+  text-align: center;
+  font-size: 5em;
+  color: #fcff60;
+}
+#timeTitle {
+  font-size: 0.4em;
+}
+#lastUpdatedTime {
+  font-size: 0.8em;
+}
